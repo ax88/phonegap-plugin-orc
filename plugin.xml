@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="com.kernix.ocr"
+    version="1.0.0">
+  <engines>
+    <engine name="cordova" version=">=3.0.0" />
+  </engines>
+  <name>OCR</name>
+  <description>Phonegap ocr plugin</description>
+  <author>Pierre-Emmanuel Bois</author>
+  <email>pebois@kernix.com</email>
+  <license>MIT</license>
+  <js-module src="www/ocr.js" name="OCR">
+    <clobbers target="OCR" />
+  </js-module>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="OCR">
+        <param name="ios-package" value="OCR"/>
+      </feature>
+    </config-file>
+    <header-file src="src/ios/OCR.h" />
+    <source-file src="src/ios/OCR.m" />
+    <header-file src="src/ios/GKCropBorderView.h" />
+    <source-file src="src/ios/GKCropBorderView.m" />
+    <header-file src="src/ios/GKImageCropOverlayView.h" />
+    <source-file src="src/ios/GKImageCropOverlayView.m" />
+    <header-file src="src/ios/GKImageCropView.h" />
+    <source-file src="src/ios/GKImageCropView.m" />
+    <header-file src="src/ios/GKImageCropViewController.h" />
+    <source-file src="src/ios/GKImageCropViewController.m" />
+    <header-file src="src/ios/GKResizeableCropOverlayView.h" />
+    <source-file src="src/ios/GKResizeableCropOverlayView.m" />
+    <resource-file src="src/ios/tessdata/eng.traineddata" />
+    <resource-file src="src/ios/tessdata/fra.traineddata" />
+    <framework src="src/ios/TesseractOCR.framework" custom="true" />
+  </platform>
+</plugin>
